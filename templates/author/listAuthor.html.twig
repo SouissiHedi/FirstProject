@@ -1,0 +1,38 @@
+<h1 style="margin-left:45%">List authors</h1>
+
+<style>
+table {
+    margin-left:43%;
+    border: 1px solid ;
+}
+table td {
+    border: 1px solid ;
+	padding: 15px;
+}
+table th {
+	font-weight: bold;
+	font-size: 13px;
+	border: 1px solid #54585d;
+}
+table tbody td {
+	border: 1px solid ;
+}
+table tr {
+	border: 1px solid ;
+}   
+</style>
+
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    {% for lista in list %} 
+    <tr>
+        <td>{{lista.username}}</td>
+        <td>{{lista.email}}</td>
+        <td><a href="">edit</a> <a href="">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
