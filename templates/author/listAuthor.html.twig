@@ -32,7 +32,7 @@ table tr {
     <tr>
         <td>{{lista.username}}</td>
         <td>{{lista.email}}</td>
-        <td><a href="">edit</a> <a href="">delete</a></td>
+        <td><a href="{{path('modifyAuth', {'id': lista.id})}}">edit</a> <a href="{{path('suppr', {'id': lista.id})}}">delete</a></td>
     </tr>
     {% endfor %}
 </table>
