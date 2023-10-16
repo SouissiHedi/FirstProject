@@ -71,6 +71,22 @@ class AuthorController extends AbstractController
         ]);
     }
 
+    #[Route('/showAuth/{id}',name: 'showA')]
+    public function authorDetails ($id)
+    {
+        $author = null;
+        // Parcourez le tableau pour trouver l'auteur correspondant à l'ID
+        foreach ($this->authors as $authorData) {
+            if ($authorData['id'] == $id) {
+                $author = $authorData;
+            };
+        };
+        return $this->render('author/showAuthor.html.twig', [
+            'author' => $author,
+            'id' => $id
+        ]);
+    }
+
     #[Route('/listAuthor',name:'list_author')]
     public function listAuthor(AuthorRepository $authorepository) : Response{
         $list = $authorepository->findAll();
